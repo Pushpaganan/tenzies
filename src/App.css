@@ -1,0 +1,54 @@
+.rounded-container {
+  display: grid;
+  grid-template-columns: repeat(5, 100px); /* 5 columns */
+  grid-template-rows: repeat(2, 100px) 50px auto; /* 2 rows of boxes, 1 row for button */
+  gap: 10px; /* Spacing between boxes */
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  width: 540px; /* Adjust width to accommodate boxes and spacing */
+  text-align: center;
+  }
+
+.rounded-container h1,
+.rounded-container p {
+  grid-column: 1 / -1; /* Span all columns */
+  margin-bottom: 10px; /* Add some space below the heading/paragraph */
+  justify-content: center;
+  align-items: center;
+}
+
+
+.number-box {
+  width: 50px;
+  height: 50px;
+  background-color: #f0f0f0; /* Light gray background */
+  border: 1px solid #ccc; /* Light gray border */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #333; /* Dark gray text color */
+}
+
+.number-box-filled{
+  background-color: rgb(6, 243, 6);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #47cbe6; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-container {
+  grid-column: 1 / -1; /* Span all columns */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
