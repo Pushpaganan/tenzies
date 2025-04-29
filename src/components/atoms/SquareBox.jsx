@@ -9,20 +9,34 @@ export default function SquareBox(props) {
     let number = propnumber;
 
     if (props.number !== propnumber) {
-        if(clicked)
-        {
+        if (clicked) {
             number = propnumber
         }
-        if(!clicked){
+        if (!clicked) {
             setpropnumber(props.number)
-        }        
+        }
     }
 
     if (!clicked && props.number !== null) {
         number = props.number
     }
+
+    function getClickedValue() {
+        const clickedElements = document.querySelectorAll('[data-isclicked="true"]');
+        let clickedNumber = clickedElements.length > 0 ? clickedElements[0].textContent : 'None-Clicked';
+        return clickedNumber
+    }
+
     function onClick(event) {
-        setclicked(prev => !prev)
+
+        const clickedNumber = getClickedValue();        
+        if (clickedNumber == 'None-Clicked' || clickedNumber == event.target.textContent || clicked) {
+            setclicked(prev => !prev)
+        }
+        else{
+            alert("You cannot select different numbers. Unselect and reselect")
+        }
+
     }
     return (
         <>
@@ -30,6 +44,7 @@ export default function SquareBox(props) {
                 className={clicked ? "number-box number-box-filled" : "number-box"}
                 id={props.id}
                 onClick={onClick}
+                data-isclicked={clicked}
             >{number}</button>
         </>
     )

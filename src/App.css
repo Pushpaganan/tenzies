@@ -1,3 +1,11 @@
+body {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  min-height: 100vh;      /* Ensures the body takes up at least the full viewport height */
+  margin: 0;             /* Optional: Remove default body margin */
+}
+
 .rounded-container {
   display: grid;
   grid-template-columns: repeat(5, 100px); /* 5 columns */
